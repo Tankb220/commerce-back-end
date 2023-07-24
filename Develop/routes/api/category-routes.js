@@ -43,17 +43,17 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
-    .then(Data => {
-      if (!Data) {
-        res.status(404).json({ message: 'No Category found with this id! '});
-        return;
-      }
-      res.json(Data);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    })
+  .then(Data => {
+    if (!Data) {
+      res.status(404).json({ message: 'No Category found with this id! '});
+      return;
+    }
+    res.json(Data);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
 });
 
 router.post('/', (req, res) => {
